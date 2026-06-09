@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Savings Goals | BudgetWise Ultra X Pro Max</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            💰 BudgetWise
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="expenses.html">💸 Expenses</a></li>
+            <li><a href="income.html">💰 Income</a></li>
+            <li><a href="budgets.html">🎯 Budgets</a></li>
+            <li><a class="active" href="savings.html">🏦 Savings</a></li>
+            <li><a href="investments.html">📈 Investments</a></li>
+            <li><a href="reports.html">📑 Reports</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Savings Goals</h1>
+
+                <p>Track your financial goals and grow your savings.</p>
+
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Summary Cards -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+
+                <h3>Total Savings</h3>
+
+                <h2>₹2,50,000</h2>
+
+                <p>Across All Goals</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Emergency Fund</h3>
+
+                <h2>₹75,000</h2>
+
+                <p>75% Completed</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Goals Active</h3>
+
+                <h2>5</h2>
+
+                <p>Currently Running</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Monthly Saving</h3>
+
+                <h2>₹15,000</h2>
+
+                <p>Average Rate</p>
+
+            </div>
+
+        </section>
+
+        <!-- Create Goal -->
+
+        <section class="form-section">
+
+            <div class="card">
+
+                <h2>Create Savings Goal</h2>
+
+                <form id="savingsForm">
+
+                    <input
+                        type="text"
+                        placeholder="Goal Name"
+                        required>
+
+                    <input
+                        type="number"
+                        placeholder="Target Amount"
+                        required>
+
+                    <input
+                        type="date"
+                        required>
+
+                    <button type="submit">
+                        Create Goal
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Goals Progress -->
+
+        <section class="transactions-section">
+
+            <h2>Goal Progress</h2>
+
+            <div class="card">
+
+                <h3>🏠 Dream House Fund</h3>
+
+                <p>₹4,50,000 / ₹10,00,000</p>
+
+                <progress value="45" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🚗 New Car Fund</h3>
+
+                <p>₹2,10,000 / ₹5,00,000</p>
+
+                <progress value="42" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>✈️ Travel Goal</h3>
+
+                <p>₹90,000 / ₹1,50,000</p>
+
+                <progress value="60" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🛡 Emergency Fund</h3>
+
+                <p>₹75,000 / ₹1,00,000</p>
+
+                <progress value="75" max="100"></progress>
+
+            </div>
+
+        </section>
+
+        <!-- Analytics -->
+
+        <section class="charts-section">
+
+            <div class="chart-box">
+
+                <h3>Savings Growth</h3>
+
+                <canvas id="savingsGrowthChart"></canvas>
+
+            </div>
+
+            <div class="chart-box">
+
+                <h3>Goal Distribution</h3>
+
+                <canvas id="goalDistributionChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Savings Table -->
+
+        <section class="transactions-section">
+
+            <h2>Savings Overview</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Goal</th>
+                        <th>Target</th>
+                        <th>Saved</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Dream House</td>
+                        <td>₹10,00,000</td>
+                        <td>₹4,50,000</td>
+                        <td>45%</td>
+                        <td>In Progress</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>New Car</td>
+                        <td>₹5,00,000</td>
+                        <td>₹2,10,000</td>
+                        <td>42%</td>
+                        <td>In Progress</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Travel</td>
+                        <td>₹1,50,000</td>
+                        <td>₹90,000</td>
+                        <td>60%</td>
+                        <td>On Track</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Emergency Fund</td>
+                        <td>₹1,00,000</td>
+                        <td>₹75,000</td>
+                        <td>75%</td>
+                        <td>Excellent</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/savings.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+
+                  </html>
