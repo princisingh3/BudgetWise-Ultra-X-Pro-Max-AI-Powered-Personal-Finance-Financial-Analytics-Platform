@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Investments | BudgetWise Ultra X Pro Max</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            💰 BudgetWise
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="expenses.html">💸 Expenses</a></li>
+            <li><a href="income.html">💰 Income</a></li>
+            <li><a href="budgets.html">🎯 Budgets</a></li>
+            <li><a href="savings.html">🏦 Savings</a></li>
+            <li><a class="active" href="investments.html">📈 Investments</a></li>
+            <li><a href="reports.html">📑 Reports</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Investment Portfolio</h1>
+
+                <p>Track stocks, mutual funds, SIPs and portfolio growth.</p>
+
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Portfolio Summary -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+
+                <h3>Total Portfolio</h3>
+
+                <h2>₹12,50,000</h2>
+
+                <p>Total Investment Value</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Total Invested</h3>
+
+                <h2>₹10,00,000</h2>
+
+                <p>Capital Invested</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Total Profit</h3>
+
+                <h2>₹2,50,000</h2>
+
+                <p>+25% Returns</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Monthly SIP</h3>
+
+                <h2>₹15,000</h2>
+
+                <p>Active SIPs</p>
+
+            </div>
+
+        </section>
+
+        <!-- Add Investment -->
+
+        <section class="form-section">
+
+            <div class="card">
+
+                <h2>Add Investment</h2>
+
+                <form id="investmentForm">
+
+                    <input
+                        type="text"
+                        placeholder="Investment Name"
+                        required>
+
+                    <select required>
+
+                        <option>Stocks</option>
+                        <option>Mutual Fund</option>
+                        <option>SIP</option>
+                        <option>ETF</option>
+                        <option>Gold</option>
+                        <option>Crypto</option>
+
+                    </select>
+
+                    <input
+                        type="number"
+                        placeholder="Investment Amount"
+                        required>
+
+                    <input
+                        type="date"
+                        required>
+
+                    <button type="submit">
+                        Add Investment
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Portfolio Goals -->
+
+        <section class="transactions-section">
+
+            <h2>Portfolio Allocation</h2>
+
+            <div class="card">
+
+                <h3>📊 Stocks</h3>
+                <p>₹5,00,000 / ₹12,50,000</p>
+                <progress value="40" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🏦 Mutual Funds</h3>
+                <p>₹4,00,000 / ₹12,50,000</p>
+                <progress value="32" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🥇 Gold</h3>
+                <p>₹2,00,000 / ₹12,50,000</p>
+                <progress value="16" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>💎 Other Assets</h3>
+                <p>₹1,50,000 / ₹12,50,000</p>
+                <progress value="12" max="100"></progress>
+
+            </div>
+
+        </section>
+
+        <!-- Analytics -->
+
+        <section class="charts-section">
+
+            <div class="chart-box">
+
+                <h3>Portfolio Growth</h3>
+
+                <canvas id="portfolioGrowthChart"></canvas>
+
+            </div>
+
+            <div class="chart-box">
+
+                <h3>Asset Allocation</h3>
+
+                <canvas id="assetAllocationChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Investment Table -->
+
+        <section class="transactions-section">
+
+            <h2>Investment Holdings</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Asset</th>
+                        <th>Type</th>
+                        <th>Invested</th>
+                        <th>Current Value</th>
+                        <th>Return</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Reliance</td>
+                        <td>Stock</td>
+                        <td>₹1,50,000</td>
+                        <td>₹1,90,000</td>
+                        <td>+26%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Nifty Index Fund</td>
+                        <td>Mutual Fund</td>
+                        <td>₹2,50,000</td>
+                        <td>₹3,10,000</td>
+                        <td>+24%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Gold ETF</td>
+                        <td>ETF</td>
+                        <td>₹1,00,000</td>
+                        <td>₹1,18,000</td>
+                        <td>+18%</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Monthly SIP</td>
+                        <td>SIP</td>
+                        <td>₹3,00,000</td>
+                        <td>₹3,65,000</td>
+                        <td>+21%</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/investment.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+
+</html>
