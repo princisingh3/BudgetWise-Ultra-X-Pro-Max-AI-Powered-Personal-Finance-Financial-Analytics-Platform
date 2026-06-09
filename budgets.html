@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget Planner | BudgetWise Ultra X Pro Max</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            💰 BudgetWise
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="expenses.html">💸 Expenses</a></li>
+            <li><a href="income.html">💰 Income</a></li>
+            <li><a class="active" href="budgets.html">🎯 Budgets</a></li>
+            <li><a href="savings.html">🏦 Savings</a></li>
+            <li><a href="investments.html">📈 Investments</a></li>
+            <li><a href="reports.html">📑 Reports</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Budget Planner</h1>
+
+                <p>Create, manage and track your monthly budgets.</p>
+
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Budget Summary -->
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+
+                <h3>Total Budget</h3>
+
+                <h2>₹50,000</h2>
+
+                <p>Monthly Allocation</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Spent</h3>
+
+                <h2>₹32,500</h2>
+
+                <p>65% Used</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Remaining</h3>
+
+                <h2>₹17,500</h2>
+
+                <p>Available Balance</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Budget Health</h3>
+
+                <h2>82%</h2>
+
+                <p>Excellent</p>
+
+            </div>
+
+        </section>
+
+        <!-- Create Budget -->
+
+        <section class="form-section">
+
+            <div class="card">
+
+                <h2>Create Budget</h2>
+
+                <form id="budgetForm">
+
+                    <input
+                        type="text"
+                        placeholder="Budget Category"
+                        required>
+
+                    <input
+                        type="number"
+                        placeholder="Budget Amount"
+                        required>
+
+                    <input
+                        type="month"
+                        required>
+
+                    <button type="submit">
+                        Create Budget
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- Budget Progress -->
+
+        <section class="transactions-section">
+
+            <h2>Budget Progress</h2>
+
+            <div class="card">
+
+                <h3>🍔 Food Budget</h3>
+
+                <p>₹8,000 / ₹10,000</p>
+                <progress value="80" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🛍 Shopping Budget</h3>
+
+                <p>₹12,000 / ₹15,000</p>
+                <progress value="80" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🚕 Transport Budget</h3>
+
+                <p>₹4,500 / ₹6,000</p>
+                <progress value="75" max="100"></progress>
+
+            </div>
+
+            <br>
+
+            <div class="card">
+
+                <h3>🎬 Entertainment Budget</h3>
+
+                <p>₹3,000 / ₹5,000</p>
+                <progress value="60" max="100"></progress>
+
+            </div>
+
+        </section>
+
+        <!-- Budget Analytics -->
+
+        <section class="charts-section">
+
+            <div class="chart-box">
+
+                <h3>Budget Utilization</h3>
+
+                <canvas id="budgetChart"></canvas>
+
+            </div>
+
+            <div class="chart-box">
+
+                <h3>Category Spending</h3>
+
+                <canvas id="categoryBudgetChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Budget Table -->
+
+        <section class="transactions-section">
+
+            <h2>Budget Categories</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Category</th>
+                        <th>Budget</th>
+                        <th>Spent</th>
+                        <th>Remaining</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Food</td>
+                        <td>₹10,000</td>
+                        <td>₹8,000</td>
+                        <td>₹2,000</td>
+                        <td>On Track</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Shopping</td>
+                        <td>₹15,000</td>
+                        <td>₹12,000</td>
+                        <td>₹3,000</td>
+                        <td>On Track</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Transport</td>
+                        <td>₹6,000</td>
+                        <td>₹4,500</td>
+                        <td>₹1,500</td>
+                        <td>Good</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Entertainment</td>
+                        <td>₹5,000</td>
+                        <td>₹3,000</td>
+                        <td>₹2,000</td>
+                        <td>Healthy</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/budget.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+
+</html>
