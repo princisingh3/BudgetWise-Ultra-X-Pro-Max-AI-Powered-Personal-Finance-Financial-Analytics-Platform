@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | BudgetWise Ultra X Pro Max</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            💰 BudgetWise
+        </div>
+
+        <ul>
+
+            <li><a class="active" href="dashboard.html">📊 Dashboard</a></li>
+
+            <li><a href="expenses.html">💸 Expenses</a></li>
+
+            <li><a href="income.html">💰 Income</a></li>
+
+            <li><a href="budgets.html">🎯 Budgets</a></li>
+
+            <li><a href="savings.html">🏦 Savings</a></li>
+
+            <li><a href="investments.html">📈 Investments</a></li>
+
+            <li><a href="reports.html">📑 Reports</a></li>
+
+            <li><a href="profile.html">👤 Profile</a></li>
+
+            <li><a href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Financial Dashboard</h1>
+
+                <p>Welcome back, Prince 👋</p>
+
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Summary Cards -->
+
+        <section class="dashboard-cards">
+
+            <div class="card income-card">
+
+                <h3>Total Income</h3>
+
+                <h2>₹85,000</h2>
+
+                <p>+12% this month</p>
+
+            </div>
+
+            <div class="card expense-card">
+
+                <h3>Total Expenses</h3>
+
+                <h2>₹32,500</h2>
+
+                <p>-5% this month</p>
+
+            </div>
+
+            <div class="card savings-card">
+
+                <h3>Total Savings</h3>
+
+                <h2>₹52,500</h2>
+
+                <p>Goal Progress 78%</p>
+
+            </div>
+
+            <div class="card investment-card">
+
+                <h3>Investments</h3>
+
+                <h2>₹1,20,000</h2>
+
+                <p>+18% annual growth</p>
+
+            </div>
+
+        </section>
+
+        <!-- Charts -->
+
+        <section class="charts-section">
+
+            <div class="chart-box">
+
+                <h3>Monthly Spending Overview</h3>
+
+                <canvas id="expenseChart"></canvas>
+
+            </div>
+
+            <div class="chart-box">
+
+                <h3>Income vs Expenses</h3>
+
+                <canvas id="incomeExpenseChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- Goals -->
+
+        <section class="goals-section">
+
+            <div class="goal-card">
+
+                <h3>🏠 House Fund</h3>
+
+                <p>₹4,50,000 / ₹10,00,000</p>
+
+                <progress value="45" max="100"></progress>
+
+            </div>
+
+            <div class="goal-card">
+
+                <h3>🚗 Car Fund</h3>
+
+                <p>₹2,10,000 / ₹5,00,000</p>
+
+                <progress value="42" max="100"></progress>
+
+            </div>
+
+            <div class="goal-card">
+
+                <h3>✈️ Travel Fund</h3>
+
+                <p>₹80,000 / ₹1,50,000</p>
+
+                <progress value="53" max="100"></progress>
+
+            </div>
+
+        </section>
+
+        <!-- Recent Transactions -->
+
+        <section class="transactions-section">
+
+            <h2>Recent Transactions</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>08 Jun</td>
+                        <td>Food</td>
+                        <td>Restaurant</td>
+                        <td>-₹850</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>07 Jun</td>
+                        <td>Salary</td>
+                        <td>Monthly Salary</td>
+                        <td>+₹50,000</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>06 Jun</td>
+                        <td>Shopping</td>
+                        <td>Online Purchase</td>
+                        <td>-₹2,400</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>05 Jun</td>
+                        <td>Investment</td>
+                        <td>Mutual Fund SIP</td>
+                        <td>-₹5,000</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/theme.js"></script>
+
+</body>
+
+</html>
