@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | BudgetWise Ultra X Pro Max</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            💰 BudgetWise
+        </div>
+
+        <ul>
+
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="expenses.html">💸 Expenses</a></li>
+            <li><a href="income.html">💰 Income</a></li>
+            <li><a href="budgets.html">🎯 Budgets</a></li>
+            <li><a href="savings.html">🏦 Savings</a></li>
+            <li><a href="investments.html">📈 Investments</a></li>
+            <li><a href="reports.html">📑 Reports</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+            <li><a class="active" href="settings.html">⚙️ Settings</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <div>
+
+                <h1>Settings</h1>
+
+                <p>Customize your BudgetWise experience.</p>
+
+            </div>
+
+            <button id="themeToggle" class="theme-btn">
+                🌙
+            </button>
+
+        </header>
+
+        <!-- Appearance Settings -->
+
+        <section class="transactions-section">
+
+            <h2>🎨 Appearance</h2>
+
+            <div class="card">
+
+                <label>
+                    Dark Mode
+                    <input type="checkbox" id="darkModeToggle">
+                </label>
+
+                <br><br>
+
+                <label>
+                    Compact Dashboard
+                    <input type="checkbox">
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- Notification Settings -->
+
+        <section class="transactions-section">
+
+            <h2>🔔 Notifications</h2>
+
+            <div class="card">
+
+                <label>
+                    Budget Alerts
+                    <input type="checkbox" checked>
+                </label>
+
+                <br><br>
+
+                <label>
+                    Savings Goal Reminders
+                    <input type="checkbox" checked>
+                </label>
+
+                <br><br>
+
+                <label>
+                    Monthly Financial Reports
+                    <input type="checkbox" checked>
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- Currency Settings -->
+
+        <section class="transactions-section">
+
+            <h2>💱 Currency & Region</h2>
+
+            <div class="card">
+
+                <label>Select Currency</label>
+
+                <select>
+
+                    <option>INR (₹)</option>
+                    <option>USD ($)</option>
+                    <option>EUR (€)</option>
+                    <option>GBP (£)</option>
+
+                </select>
+
+                <br><br>
+
+                <label>Select Language</label>
+
+                <select>
+
+                    <option>English</option>
+                    <option>Hindi</option>
+                    <option>French</option>
+                    <option>Spanish</option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- Security Settings -->
+
+        <section class="transactions-section">
+
+            <h2>🔒 Security</h2>
+
+            <div class="card">
+
+                <label>
+                    Enable Two-Factor Authentication
+                    <input type="checkbox" checked>
+                </label>
+
+                <br><br>
+
+                <label>
+                    Enable Biometric Login
+                    <input type="checkbox">
+                </label>
+
+                <br><br>
+
+                <button class="btn-primary">
+                    Change Password
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Backup & Sync -->
+
+        <section class="transactions-section">
+
+            <h2>☁️ Backup & Sync</h2>
+
+            <div class="card">
+
+                <button class="btn-primary">
+                    Backup Data
+                </button>
+
+                <button class="btn-secondary">
+                    Restore Backup
+                </button>
+
+                <button class="btn-primary">
+                    Sync Account
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- About App -->
+
+        <section class="transactions-section">
+
+            <h2>ℹ️ About</h2>
+
+            <div class="card">
+
+                <p><strong>App:</strong> BudgetWise Ultra X Pro Max</p>
+
+                <p><strong>Version:</strong> 1.0.0</p>
+
+                <p><strong>Developer:</strong> Prince Singh</p>
+
+                <p><strong>License:</strong> MIT License</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/settings.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
