@@ -9,16 +9,16 @@ const CACHE_NAME =
 const STATIC_ASSETS = [
 
     "./",
-    "./index.html",
-    "./dashboard.html",
-    "./expenses.html",
-    "./income.html",
-    "./budgets.html",
-    "./savings.html",
-    "./investments.html",
-    "./reports.html",
-    "./profile.html",
-    "./settings.html",
+    "./html/index.html",
+    "./html/dashboard.html",
+    "./html/expenses.html",
+    "./html/income.html",
+    "./html/budgets.html",
+    "./html/savings.html",
+    "./html/investments.html",
+    "./html/reports.html",
+    "./html/profile.html",
+    "./html/settings.html",
 
     "./css/style.css",
     "./css/dashboard.css",
@@ -237,10 +237,10 @@ self.addEventListener(
                 : "New update available",
 
             icon:
-                "./assets/icon-192.png",
+                "./asset/icon-192.png",
 
             badge:
-                "./assets/icon-192.png",
+                "./asset/icon-192.png",
 
             vibrate: [
                 200,
