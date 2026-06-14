@@ -43,9 +43,9 @@ const STATIC_ASSETS = [
 
     "./manifest.json",
 
-    "./assets/icon-192.png",
-    "./assets/icon-512.png",
-    "./assets/logo.png"
+    "./asset/icon-192.png",
+    "./asset/icon-512.png",
+    "./asset/logo.png"
 ];
 
 /* ==========================
