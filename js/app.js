@@ -118,21 +118,21 @@ class BudgetWise {
        Expense Functions
     ========================== */
 
-    addExpense(expense) {
+   addExpense(expense) {
 
-        this.expenses.push(expense);
-
-        this.saveData(
-            "bw_expenses",
-            this.expenses
-        );
-
-        this.showNotification(
-            "Expense Added Successfully",
-            "success"
-        );
-
+    if (!expense || isNaN(expense.amount) || Number(expense.amount) < 0) {
+        this.showNotification("Invalid expense amount", "error");
+        return;
     }
+
+    this.expenses.push(expense);
+
+    this.saveData("bw_expenses", this.expenses);
+
+    this.updateDashboard();
+
+    this.showNotification("Expense Added Successfully", "success");
+   }
 
     /* ==========================
        Income Functions
@@ -140,20 +140,19 @@ class BudgetWise {
 
     addIncome(income) {
 
-        this.income.push(income);
-
-        this.saveData(
-            "bw_income",
-            this.income
-        );
-
-        this.showNotification(
-            "Income Added Successfully",
-            "success"
-        );
-
+    if (!income || isNaN(income.amount) || Number(income.amount) < 0) {
+        this.showNotification("Invalid income amount", "error");
+        return;
     }
 
+    this.income.push(income);
+
+    this.saveData("bw_income", this.income);
+
+    this.updateDashboard();
+
+    this.showNotification("Income Added Successfully", "success");
+    }
     /* ==========================
        Budget Functions
     ========================== */
@@ -305,54 +304,38 @@ class BudgetWise {
 
     initializeNotifications() {
 
-        const container =
-            document.createElement("div");
-
-        container.id =
-            "notificationContainer";
-
-        container.style.position =
-            "fixed";
-
-        container.style.top = "20px";
-
-        container.style.right = "20px";
-
-        container.style.zIndex = "9999";
-
-        document.body.appendChild(
-            container
-        );
-
+    if (document.getElementById("notificationContainer")) {
+        return;
     }
 
-    showNotification(
-        message,
-        type = "success"
-    ) {
+    const container = document.createElement("div");
 
-        const notification =
-            document.createElement("div");
+    container.id = "notificationContainer";
+    container.style.position = "fixed";
+    container.style.top = "20px";
+    container.style.right = "20px";
+    container.style.zIndex = "9999";
 
-        notification.className =
-            `notification notification-${type}`;
-
-        notification.innerHTML =
-            `<strong>${message}</strong>`;
-
-        document
-            .getElementById(
-                "notificationContainer"
-            )
-            .appendChild(notification);
-
-        setTimeout(() => {
-
-            notification.remove();
-
-        }, 3000);
-
+    document.body.appendChild(container);
     }
+
+   showNotification(message, type = "success") {
+
+    const container = document.getElementById("notificationContainer");
+
+    if (!container) return;
+
+    const notification = document.createElement("div");
+
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+
+    container.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+   }
 
     /* ==========================
        Current Date
@@ -434,64 +417,40 @@ class BudgetWise {
        Import Data
     ========================== */
 
-    importData(file) {
+     importData(file) {
 
-        const reader =
-            new FileReader();
+    const reader = new FileReader();
 
-        reader.onload = e => {
+    reader.onload = (e) => {
 
-            const data =
-                JSON.parse(
-                    e.target.result
-                );
+        try {
 
-            localStorage.setItem(
-                "bw_expenses",
-                JSON.stringify(
-                    data.expenses || []
-                )
-            );
+            const data = JSON.parse(e.target.result);
 
-            localStorage.setItem(
-                "bw_income",
-                JSON.stringify(
-                    data.income || []
-                )
-            );
+            localStorage.setItem("bw_expenses", JSON.stringify(data.expenses || []));
+            localStorage.setItem("bw_income", JSON.stringify(data.income || []));
+            localStorage.setItem("bw_budgets", JSON.stringify(data.budgets || []));
+            localStorage.setItem("bw_savings", JSON.stringify(data.savings || []));
+            localStorage.setItem("bw_investments", JSON.stringify(data.investments || []));
 
-            localStorage.setItem(
-                "bw_budgets",
-                JSON.stringify(
-                    data.budgets || []
-                )
-            );
+            this.showNotification("Data Imported Successfully", "success");
 
-            localStorage.setItem(
-                "bw_savings",
-                JSON.stringify(
-                    data.savings || []
-                )
-            );
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
 
-            localStorage.setItem(
-                "bw_investments",
-                JSON.stringify(
-                    data.investments || []
-                )
-            );
+        } catch (error) {
 
-            location.reload();
+            this.showNotification("Invalid backup file", "error");
 
-        };
+        }
 
-        reader.readAsText(file);
+    };
 
-    }
-
-}
-
-/* ==========================
+    reader.readAsText(file);
+     }
+   
+   /*===========================
    Initialize App
 ========================== */
 
