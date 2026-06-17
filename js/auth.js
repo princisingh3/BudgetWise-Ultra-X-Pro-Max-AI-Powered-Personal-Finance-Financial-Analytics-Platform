@@ -30,8 +30,32 @@ class AuthManager {
     /* ==========================
        Register User
     ========================== */
+      
+if (
+    !userData.name.trim() ||
+    !userData.email.trim() ||
+    !userData.password.trim()
+) {
+    this.showAuthMessage("Please fill all fields", "error");
+    return false;
+}
 
-    register(userData) {
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailRegex.test(userData.email)) {
+    this.showAuthMessage("Please enter a valid email", "error");
+    return false;
+}
+
+if (userData.password.length < 8) {
+    this.showAuthMessage(
+        "Password must be at least 8 characters",
+        "error"
+    );
+    return false;
+}
+   
+   register(userData) {
 
         const users =
             JSON.parse(
@@ -86,13 +110,25 @@ class AuthManager {
         );
 
         this.showAuthMessage(
-            "Account Created Successfully",
+            "Account Created Successfully"
             "success"
         );
 
         return true;
 
     }
+
+      this.currentUser = newUser;
+
+localStorage.setItem(
+    "bw_current_user",
+    JSON.stringify(newUser)
+);
+
+localStorage.setItem(
+    "bw_logged_in",
+    "true"
+);
 
     /* ==========================
        Login User
