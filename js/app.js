@@ -13,11 +13,11 @@ class BudgetWise {
 
     init() {
 
-        this.loadData();
-        this.updateDashboard();
-        this.initializeNotifications();
-        this.initializeStorage();
-        this.setCurrentDate();
+       this.initializeStorage();
+this.loadData();
+this.initializeNotifications();
+this.updateDashboard();
+this.setCurrentDate();
 
         console.log(
             "🚀 BudgetWise Ultra X Pro Max Loaded"
