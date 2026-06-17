@@ -171,6 +171,11 @@ localStorage.setItem(
             "true"
         );
 
+       localStorage.setItem(
+    "bw_last_login",
+    new Date().toISOString()
+);
+
         this.showAuthMessage(
             "Login Successful",
             "success"
@@ -415,15 +420,14 @@ localStorage.setItem(
 
         }
 
-        container.innerHTML =
-            message;
+        container.textContent = message;
 
         container.className =
             `alert alert-${type}`;
 
         setTimeout(() => {
 
-            container.innerHTML = "";
+            container.textContent = "";
 
             container.className = "";
 
