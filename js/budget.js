@@ -174,7 +174,11 @@ if (alreadyExists) {
 
     deleteBudget(id) {
 
-        this.budgets =
+       if (!confirm("Are you sure you want to delete this budget?")) {
+    return;
+       }
+       
+       this.budgets =
             this.budgets.filter(
                 budget =>
                     budget.id !== id
@@ -229,13 +233,14 @@ if (alreadyExists) {
         spentAmount
     ) {
 
-        return Math.min(
-            (
-                spentAmount /
-                budgetAmount
-            ) * 100,
-            100
-        );
+      if (budgetAmount <= 0) {
+    return 0;
+}
+
+return Math.min(
+    (spentAmount / budgetAmount) * 100,
+    100
+);
 
     }
 
