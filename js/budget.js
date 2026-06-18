@@ -100,6 +100,21 @@ class BudgetManager {
             return;
 
         }
+       if (Number(amount) <= 0) {
+    alert("Budget amount must be greater than 0.");
+    return;
+}
+
+const alreadyExists = this.budgets.some(
+    item =>
+        item.category === category &&
+        item.month === month
+);
+
+if (alreadyExists) {
+    alert("Budget for this category and month already exists.");
+    return;
+}
 
         const budget = {
 
