@@ -296,7 +296,7 @@ return Math.min(
                         <div class="progress-container">
                             <div
                             class="progress-bar"
-                            style="width:${progress}%">
+                            style="width:${progress}%;background:${progressColor}"
                             </div>
                         </div>
                         ${progress.toFixed(1)}%
