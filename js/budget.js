@@ -267,6 +267,12 @@ return Math.min(
                         budget.amount,
                         spent
                     );
+               const progressColor =
+    progress >= 100
+        ? "#ef4444"
+        : progress >= 80
+        ? "#f59e0b"
+        : "#22c55e";
 
                 const status =
                     spent >
@@ -510,6 +516,7 @@ return Math.min(
             "budget-report.csv";
 
         link.click();
+       URL.revokeObjectURL(link.href);
 
     }
 
